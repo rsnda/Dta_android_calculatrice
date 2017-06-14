@@ -3,6 +3,9 @@ package com.example.admin.dta_android_calculatrice;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
+
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -12,8 +15,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
 
     }
 
@@ -84,5 +85,25 @@ public class MainActivity extends AppCompatActivity {
                 break;
 
         }
+
+        updateView();
+    }
+
+
+    public void updateView(){
+        TextView affiche_resultat = (TextView) findViewById(R.id.tv_affiche_resultat);
+        TextView stack_un = (TextView) findViewById(R.id.tv_stack_un);
+        TextView stack_deux = (TextView) findViewById(R.id.tv_stack_deux);
+        TextView stack_trois = (TextView) findViewById(R.id.tv_stack_trois);
+        TextView stack_quatre = (TextView) findViewById(R.id.tv_stack_quatre);
+
+        affiche_resultat.setText(logic.getTemp());
+        List<Integer> temp_list = logic.getStack();
+
+        if(!temp_list.isEmpty())
+            stack_un.setText(String.valueOf(temp_list.get(0)));
+
+
+
     }
 }
