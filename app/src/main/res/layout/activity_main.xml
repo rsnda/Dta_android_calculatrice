@@ -7,11 +7,17 @@
     tools:context="com.example.admin.dta_android_calculatrice.MainActivity">
 
     <LinearLayout
-        android:layout_width="348dp"
+        android:layout_width="0dp"
         android:layout_height="130dp"
         android:orientation="vertical"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="2dp">
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/tv_affiche_resultat"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="8dp">
 
         <TextView
             android:id="@+id/tv_stack_quatre"
@@ -53,85 +59,32 @@
 
     <TextView
         android:id="@+id/tv_affiche_resultat"
-        android:layout_width="360dp"
+        android:layout_width="0dp"
         android:layout_height="55dp"
         android:background="@android:color/darker_gray"
         android:text="@string/tv_affiche_resultat"
-        tools:layout_editor_absoluteX="10dp"
-        tools:layout_editor_absoluteY="135dp" />
-
-    <LinearLayout
-        android:layout_width="351dp"
-        android:layout_height="81dp"
-        android:orientation="horizontal"
-        tools:layout_editor_absoluteY="289dp"
         android:layout_marginRight="8dp"
         app:layout_constraintRight_toRightOf="parent"
         android:layout_marginLeft="8dp"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp">
-
-        <Button
-            android:id="@+id/button_quatre"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginEnd="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="16dp"
-            android:layout_weight="1"
-            android:text="@string/btn_quatre"
-            app:layout_constraintHorizontal_bias="0.571"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toLeftOf="@+id/button_cinq"
-            app:layout_constraintTop_toBottomOf="@+id/button_un" />
-
-        <Button
-            android:id="@+id/button_cinq"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="@string/btn_cinq"
-            tools:layout_editor_absoluteX="100dp"
-            tools:layout_editor_absoluteY="290dp" />
-
-        <Button
-            android:id="@+id/button_six"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="12dp"
-            android:layout_marginStart="12dp"
-            android:layout_weight="1"
-            android:text="@string/btn_six"
-            app:layout_constraintLeft_toRightOf="@+id/button_cinq"
-            tools:layout_editor_absoluteY="290dp" />
-
-        <Button
-            android:id="@+id/button_moins"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_weight="1"
-            android:text="@string/btn_moins"
-            app:layout_constraintLeft_toRightOf="@+id/button_six"
-            tools:layout_editor_absoluteY="290dp" />
-    </LinearLayout>
+        app:layout_constraintHorizontal_bias="0.0"
+        android:layout_marginBottom="69dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout5" />
 
     <LinearLayout
         android:layout_width="360dp"
-        android:layout_height="80dp"
+        android:layout_height="0dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:orientation="horizontal"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        tools:layout_editor_absoluteY="215dp"
         android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp">
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
+        android:id="@+id/linearLayout5">
 
         <Button
             android:id="@+id/button_un"
@@ -143,6 +96,7 @@
             android:layout_marginStart="8dp"
             android:layout_weight="1"
             android:text="@string/btn_un"
+            android:onClick="onClick"
             app:layout_constraintHorizontal_bias="0.571"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toLeftOf="@+id/button_deux"
@@ -154,6 +108,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="@string/btn_deux"
+            android:onClick="onClick"
             tools:layout_editor_absoluteX="100dp"
             tools:layout_editor_absoluteY="204dp" />
 
@@ -165,6 +120,7 @@
             android:layout_marginStart="12dp"
             android:layout_weight="1"
             android:text="@string/btn_trois"
+            android:onClick="onClick"
             app:layout_constraintLeft_toRightOf="@+id/button_deux"
             tools:layout_editor_absoluteY="204dp" />
 
@@ -175,14 +131,16 @@
             android:layout_marginLeft="8dp"
             android:layout_marginStart="8dp"
             android:layout_weight="1"
+            android:background="@android:color/holo_green_dark"
             android:text="@string/btn_plus"
+            android:onClick="onClick"
             app:layout_constraintLeft_toRightOf="@+id/button_trois"
             tools:layout_editor_absoluteY="204dp" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="348dp"
-        android:layout_height="87dp"
+        android:layout_height="0dp"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
@@ -190,7 +148,9 @@
         android:orientation="horizontal"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        tools:layout_editor_absoluteY="370dp">
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        android:id="@+id/linearLayout3">
 
         <Button
             android:id="@+id/button_sept"
@@ -201,6 +161,7 @@
             android:layout_marginTop="16dp"
             android:layout_weight="1"
             android:text="@string/btn_sept"
+            android:onClick="onClick"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/button_quatre" />
 
@@ -213,6 +174,7 @@
             android:layout_marginTop="16dp"
             android:layout_weight="1"
             android:text="@string/btn_neuf"
+            android:onClick="onClick"
             app:layout_constraintLeft_toRightOf="@+id/button_huit"
             app:layout_constraintTop_toBottomOf="@+id/button_six" />
 
@@ -225,6 +187,7 @@
             android:layout_marginTop="16dp"
             android:layout_weight="1"
             android:text="@string/btn_huit"
+            android:onClick="onClick"
             app:layout_constraintLeft_toRightOf="@+id/button_sept"
             app:layout_constraintTop_toBottomOf="@+id/button_cinq" />
 
@@ -238,7 +201,9 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="16dp"
             android:layout_weight="1"
+            android:background="@android:color/holo_green_dark"
             android:text="@string/btn_diviser"
+            android:onClick="onClick"
             app:layout_constraintHorizontal_bias="0.206"
             app:layout_constraintLeft_toRightOf="@+id/button_neuf"
             app:layout_constraintRight_toRightOf="parent"
@@ -247,38 +212,118 @@
 
     <LinearLayout
         android:layout_width="346dp"
-        android:layout_height="42dp"
+        android:layout_height="0dp"
         android:orientation="horizontal"
-        tools:layout_editor_absoluteY="465dp"
-        tools:layout_editor_absoluteX="8dp">
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="8dp"
+        android:id="@+id/linearLayout2">
 
         <Button
             android:id="@+id/button_clear"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="CLEAR" />
+            android:background="@android:color/holo_green_dark"
+            android:text="CLEAR"
+            android:onClick="onClick"/>
 
         <Button
             android:id="@+id/button_pop"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="POP" />
+            android:background="@android:color/holo_green_dark"
+            android:text="POP"
+            android:onClick="onClick"/>
 
         <Button
             android:id="@+id/button_swap"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="SWAP" />
+            android:background="@android:color/holo_green_dark"
+            android:text="SWAP"
+            android:onClick="onClick"/>
 
         <Button
             android:id="@+id/button_enter"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="ENTER" />
+            android:background="@android:color/holo_red_dark"
+            android:text="ENTER"
+            android:onClick="onClick"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="351dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
+        android:id="@+id/linearLayout4">
+
+        <Button
+            android:id="@+id/button_quatre"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_weight="1"
+            android:text="@string/btn_quatre"
+            android:onClick="onClick"
+            app:layout_constraintHorizontal_bias="0.571"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/button_cinq"
+            app:layout_constraintTop_toBottomOf="@+id/button_un" />
+
+        <Button
+            android:id="@+id/button_cinq"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/btn_cinq"
+            android:onClick="onClick"
+            tools:layout_editor_absoluteX="100dp"
+            tools:layout_editor_absoluteY="290dp" />
+
+        <Button
+            android:id="@+id/button_six"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="12dp"
+            android:layout_marginStart="12dp"
+            android:layout_weight="1"
+            android:text="@string/btn_six"
+            android:onClick="onClick"
+            app:layout_constraintLeft_toRightOf="@+id/button_cinq"
+            tools:layout_editor_absoluteY="290dp" />
+
+        <Button
+            android:id="@+id/button_moins"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:background="@android:color/holo_green_dark"
+            android:text="@string/btn_moins"
+            android:onClick="onClick"
+            app:layout_constraintLeft_toRightOf="@+id/button_six"
+            tools:layout_editor_absoluteY="290dp" />
     </LinearLayout>
 
 
