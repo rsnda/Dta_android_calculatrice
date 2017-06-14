@@ -23,8 +23,9 @@
             android:id="@+id/tv_stack_quatre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@android:color/holo_blue_bright"
+            android:background="@android:color/holo_orange_dark"
             android:text="@string/tv_stack_quatre"
+            android:textSize="24sp"
             tools:layout_editor_absoluteX="6dp"
             tools:layout_editor_absoluteY="2dp" />
 
@@ -32,8 +33,9 @@
             android:id="@+id/tv_stack_trois"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@android:color/holo_blue_bright"
+            android:background="@android:color/holo_orange_dark"
             android:text="@string/tv_stack_trois"
+            android:textSize="24sp"
             tools:layout_editor_absoluteX="7dp"
             tools:layout_editor_absoluteY="34dp" />
 
@@ -41,8 +43,9 @@
             android:id="@+id/tv_stack_deux"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@android:color/holo_blue_bright"
+            android:background="@android:color/holo_orange_dark"
             android:text="@string/tv_stack_deux"
+            android:textSize="24sp"
             tools:layout_editor_absoluteX="7dp"
             tools:layout_editor_absoluteY="66dp" />
 
@@ -50,9 +53,10 @@
             android:id="@+id/tv_stack_un"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1.89"
-            android:background="@android:color/holo_blue_bright"
+            android:layout_weight="1.19"
+            android:background="@android:color/holo_orange_dark"
             android:text="@string/tv_stack_un"
+            android:textSize="24sp"
             tools:layout_editor_absoluteX="65dp"
             tools:layout_editor_absoluteY="93dp" />
     </LinearLayout>
@@ -61,21 +65,21 @@
         android:id="@+id/tv_affiche_resultat"
         android:layout_width="0dp"
         android:layout_height="55dp"
+        android:layout_marginBottom="69dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
         android:background="@android:color/darker_gray"
         android:text="@string/tv_affiche_resultat"
-        android:layout_marginRight="8dp"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="parent"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout5"
         app:layout_constraintHorizontal_bias="0.0"
-        android:layout_marginBottom="69dp"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout5" />
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
 
     <LinearLayout
         android:id="@+id/linearLayout5"
         android:layout_width="350dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="7dp"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
@@ -134,7 +138,6 @@
         android:id="@+id/linearLayout3"
         android:layout_width="350dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
@@ -241,7 +244,6 @@
         android:id="@+id/linearLayout4"
         android:layout_width="350dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"

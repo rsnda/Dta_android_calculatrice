@@ -12,9 +12,9 @@
     <string name="btn_trois">3</string>
     <string name="btn_moins">-</string>
     <string name="btn_plus">+</string>
-    <string name="tv_stack_deux">2</string>
-    <string name="tv_stack_trois">3</string>
-    <string name="tv_affiche_resultat">res</string>
-    <string name="tv_stack_quatre">4</string>
-    <string name="tv_stack_un">1</string>
+    <string name="tv_stack_deux"></string>
+    <string name="tv_stack_trois"></string>
+    <string name="tv_affiche_resultat"></string>
+    <string name="tv_stack_quatre"></string>
+    <string name="tv_stack_un"></string>
 </resources>
