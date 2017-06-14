@@ -13,12 +13,12 @@ import java.util.List;
 public class CalculLogic {
     private int MINIMAL_VALUE = 1;
     private List<Integer> stack = new ArrayList<Integer>();
-    //private int result = 0;
+    private String result = "";
     private String temp = "";
 
     public void enter(int n){
-        Log.d("CalculLogic", "Coucou je suis " + n);
         this.temp += String.valueOf(n);
+        this.result = this.temp;
         Log.d("CalculLogic", "Temp =  " + temp);
     }
 
@@ -26,7 +26,8 @@ public class CalculLogic {
         if(this.temp.equals("")){
             return;
         }
-        this.stack.add(Integer.parseInt(this.temp));
+        this.stack.add(0, Integer.parseInt(this.temp));
+        this.result = "";
         this.temp = "";
         Log.d("CalculLogic", "List = " + this.stack);
     }
@@ -37,13 +38,9 @@ public class CalculLogic {
         }
 
         int r = this.stack.get(0) + this.stack.get(1);
-        Log.d("CalculLogic", "r = " + r);
         this.stack.remove(0);
-        Log.d("CalculLogic", "Plus 2 = " + this.stack);
         this.stack.remove(0);
-        Log.d("CalculLogic", "Plus 3 = " + this.stack);
         this.stack.add(0, r);
-        Log.d("CalculLogic", "Plus r = " + this.stack);
     }
 
     public void minus(){
@@ -51,14 +48,10 @@ public class CalculLogic {
             return;
         }
 
-        int r = this.stack.get(0) - this.stack.get(1);
-        Log.d("CalculLogic", "r = " + r);
+        int r = this.stack.get(1) - this.stack.get(0);
         this.stack.remove(0);
-        Log.d("CalculLogic", "Minus 2 = " + this.stack);
         this.stack.remove(0);
-        Log.d("CalculLogic", "Minus 3 = " + this.stack);
         this.stack.add(0, r);
-        Log.d("CalculLogic", "Minus r = " + this.stack);
     }
 
     public void divide(){
@@ -66,14 +59,10 @@ public class CalculLogic {
             return;
         }
 
-        int r = this.stack.get(0) / this.stack.get(1);
-        Log.d("CalculLogic", "r = " + r);
+        int r = this.stack.get(1) / this.stack.get(0);
         this.stack.remove(0);
-        Log.d("CalculLogic", "Divide 2 = " + this.stack);
         this.stack.remove(0);
-        Log.d("CalculLogic", "Divide 3 = " + this.stack);
         this.stack.add(0, r);
-        Log.d("CalculLogic", "Divide r = " + this.stack);
 
     }
 
@@ -87,9 +76,7 @@ public class CalculLogic {
             return;
         }
 
-        Log.d("CalculLogic", "Pop before = " + this.stack);
         this.stack.remove(0);
-        Log.d("CalculLogic", "Pop before = " + this.stack);
 
     }
 
@@ -98,22 +85,23 @@ public class CalculLogic {
             return;
         }
 
-        Log.d("CalculLogic", "Swap before = " + this.stack);
         int temp = this.stack.get(0);
         this.stack.set(0, this.stack.get(1));
         this.stack.set(1, temp);
-        Log.d("CalculLogic", "Swap after = " + this.stack);
 
     }
 
     public List<Integer> getStack() {
+        if(this.stack.size() > 4)
+            return stack.subList(0, 4);
+
         return stack;
     }
 
-    /*public int getResult() {
+    public String getResult() {
         return result;
     }
-    */
+
     public String getTemp() {
         return temp;
     }

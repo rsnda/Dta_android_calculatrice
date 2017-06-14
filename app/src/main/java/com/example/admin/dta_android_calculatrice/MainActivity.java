@@ -2,6 +2,7 @@ package com.example.admin.dta_android_calculatrice;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -57,14 +58,17 @@ public class MainActivity extends AppCompatActivity {
                 break;
 
             case R.id.button_plus:
+                logic.enter();
                 logic.plus();
                 break;
 
             case R.id.button_moins:
+                logic.enter();
                 logic.minus();
                 break;
 
             case R.id.button_diviser:
+                logic.enter();
                 logic.divide();
                 break;
 
@@ -97,13 +101,47 @@ public class MainActivity extends AppCompatActivity {
         TextView stack_trois = (TextView) findViewById(R.id.tv_stack_trois);
         TextView stack_quatre = (TextView) findViewById(R.id.tv_stack_quatre);
 
-        affiche_resultat.setText(logic.getTemp());
+        affiche_resultat.setText(logic.getResult());
         List<Integer> temp_list = logic.getStack();
 
-        if(!temp_list.isEmpty())
-            stack_un.setText(String.valueOf(temp_list.get(0)));
+        switch (temp_list.size()){
+            case 1:
+                stack_un.setText(String.valueOf(temp_list.get(0)));
+                stack_deux.setText("");
+                stack_trois.setText("");
+                stack_quatre.setText("");
+                break;
 
+            case 2:
+                stack_un.setText(String.valueOf(temp_list.get(0)));
+                stack_deux.setText(String.valueOf(temp_list.get(1)));
+                stack_trois.setText("");
+                stack_quatre.setText("");
+                break;
 
+            case 3:
+                stack_un.setText(String.valueOf(temp_list.get(0)));
+                stack_deux.setText(String.valueOf(temp_list.get(1)));
+                stack_trois.setText(String.valueOf(temp_list.get(2)));
+                stack_quatre.setText("");
+                break;
+
+            case 4:
+                stack_un.setText(String.valueOf(temp_list.get(0)));
+                stack_deux.setText(String.valueOf(temp_list.get(1)));
+                stack_trois.setText(String.valueOf(temp_list.get(2)));
+                stack_quatre.setText(String.valueOf(temp_list.get(3)));
+                break;
+
+            default:
+                stack_un.setText("");
+                stack_deux.setText("");
+                stack_trois.setText("");
+                stack_quatre.setText("");
+                break;
+        }
 
     }
+
+
 }
